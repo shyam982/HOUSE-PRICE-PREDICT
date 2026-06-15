@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaNest Property Intelligence</title>
+    <meta
+      name="description"
+      content="A premium property valuation experience with intelligent pricing insights."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
+    <main class="app-shell">
+      <header class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">AI HomeValuator Pro</p>
+          <h1>Forecast the next move in the property market.</h1>
+          <p class="hero-text">
+            Blend location, living space, and growth signals into a refined price outlook for modern buyers and investors.
+          </p>
+          <div class="hero-badges">
+            <span>Live market pulse</span>
+            <span>Scenario explorer</span>
+            <span>Smart investment score</span>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme">☀️ Light mode</button>
+          <div class="hero-metrics">
+            <div class="metric-pill">
+              <strong id="marketTrendValue">+8.4%</strong>
+              <span>Market trend</span>
+            </div>
+            <div class="metric-pill">
+              <strong id="demandValue">High</strong>
+              <span>Demand pulse</span>
+            </div>
+            <div class="metric-pill">
+              <strong id="confidenceValue">91%</strong>
+              <span>Confidence</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-grid">
+        <div class="panel form-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Property profile</p>
+            <h2>Shape your valuation</h2>
+          </div>
+
+          <form id="valuationForm" class="valuation-form">
+            <label>
+              Bedrooms
+              <input id="bedrooms" type="range" min="1" max="6" value="3" />
+              <span class="range-value" id="bedroomsValue">3</span>
+            </label>
+
+            <label>
+              Bathrooms
+              <input id="bathrooms" type="range" min="1" max="5" value="2" />
+              <span class="range-value" id="bathroomsValue">2</span>
+            </label>
+
+            <label>
+              Area (sq ft)
+              <input id="area" type="range" min="800" max="4500" value="2200" step="50" />
+              <span class="range-value" id="areaValue">2200</span>
+            </label>
+
+            <label>
+              Property age (years)
+              <input id="age" type="range" min="1" max="40" value="10" />
+              <span class="range-value" id="ageValue">10</span>
+            </label>
+
+            <label>
+              Neighborhood
+              <select id="location">
+                <option value="city">Central city</option>
+                <option value="suburb">Premium suburb</option>
+                <option value="coastal">Coastal district</option>
+                <option value="rural">Greenbelt</option>
+              </select>
+            </label>
+
+            <label>
+              Growth outlook
+              <input id="growth" type="range" min="1" max="10" value="6" />
+              <span class="range-value" id="growthValue">6</span>
+            </label>
+
+            <div class="action-row">
+              <button type="button" id="predictBtn">Generate forecast</button>
+              <button type="button" id="resetBtn" class="ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel insight-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Live insight</p>
+            <h2>Your premium estimate</h2>
+          </div>
+
+          <div class="price-card">
+            <p class="price-label">Estimated value</p>
+            <h3 id="priceOutput">$0</h3>
+            <p id="priceHint" class="price-hint">Fine-tuned for strong buyer interest.</p>
+          </div>
+
+          <div class="insight-grid">
+            <div class="mini-card">
+              <span>Affordability</span>
+              <strong id="affordability">Balanced</strong>
+            </div>
+            <div class="mini-card">
+              <span>Investment score</span>
+              <strong id="investmentScore">0/100</strong>
+            </div>
+            <div class="mini-card">
+              <span>Risk level</span>
+              <strong id="riskLevel">Low</strong>
+            </div>
+            <div class="mini-card">
+              <span>Price per sqft</span>
+              <strong id="pricePerSqft">$0</strong>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Market forecast</h3>
+              <p>Powered by a lightweight regression engine.</p>
+            </div>
+            <svg id="forecastChart" viewBox="0 0 320 170" aria-label="Forecast chart"></svg>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-header">
+              <h3>Scenario explorer</h3>
+              <p>See how upgrades influence upside.</p>
+            </div>
+
+            <div class="chip-row" id="scenarioChips">
+              <button class="chip active" data-scenario="balanced">Balanced</button>
+              <button class="chip" data-scenario="renovation">Renovation</button>
+              <button class="chip" data-scenario="growth">Growth surge</button>
+            </div>
+
+            <div class="pulse-bars">
+              <div class="bar-row">
+                <span>Demand</span>
+                <div class="bar-track"><div id="demandBar" class="bar-fill"></div></div>
+              </div>
+              <div class="bar-row">
+                <span>Upgrade potential</span>
+                <div class="bar-track"><div id="upgradeBar" class="bar-fill"></div></div>
+              </div>
+              <div class="bar-row">
+                <span>Liquidity</span>
+                <div class="bar-track"><div id="liquidityBar" class="bar-fill"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
